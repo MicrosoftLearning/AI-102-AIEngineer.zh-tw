@@ -2,12 +2,12 @@
 lab:
   title: 建置問題解答解決方案
   module: Module 6 - Building a QnA Solution
-ms.openlocfilehash: 0a71dc2c0185c51d8ccf390afd780dd914366be0
-ms.sourcegitcommit: 45e075a4b45a914d378900b4c00451a530d813de
+ms.openlocfilehash: 42b3b6e6955188d3d442a4f587ead6afe0f389c6
+ms.sourcegitcommit: a879eae298aaf2ab6415fc4fdb67f52f592d907a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2022
-ms.locfileid: "145892509"
+ms.lasthandoff: 07/02/2022
+ms.locfileid: "146902478"
 ---
 # <a name="create-a-question-answering-solution"></a>建置問題解答解決方案
 
@@ -19,10 +19,10 @@ ms.locfileid: "145892509"
 
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
-如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製至您正在處理此實驗室的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
+如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製至您目前使用實驗室的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
 
 1. 啟動 Visual Studio Code。
-2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git:Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
+2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git:Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (不限資料夾)。
 3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
 4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 
@@ -57,7 +57,7 @@ ms.locfileid: "145892509"
 1. 在新的瀏覽器索引標籤中，開啟位於 `https://language.azure.com` 的 *Language Studio* 入口網站，然後使用與您 Azure 訂用帳戶相關聯的 Microsoft 帳戶進行登入。
 2. 若系統提示您選擇語言資源，請選取下列設定：
     - **Azure 目錄**：包含您訂用帳戶的 Azure 目錄。
-    - **Azure 訂用帳戶**：您的 Azure 訂閱。
+    - **Azure 訂用帳戶**：您的 Azure 訂用帳戶。
     - **語言資源**：您先前建立的語言資源。
 3. 如果您<u>未</u>收到選擇語言資源的提示，可能是因為您的訂用帳戶中有多個語言資源；在此情況下：
     1. 在分頁頂端的列上，按一下 [設定 (&#9881;)] 按鈕。
