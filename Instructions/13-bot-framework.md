@@ -2,12 +2,12 @@
 lab:
   title: 使用 Bot Framework SDK 建立 Bot
   module: Module 7 - Conversational AI and the Azure Bot Service
-ms.openlocfilehash: 7f2d78bec2ee9fab7bf5fad9ec9ef8ebc76b7fba
-ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.openlocfilehash: ab51a1f11f4eee99838634d83b5d9261a8c20ecb
+ms.sourcegitcommit: 480c5898009ea964025fdecb57900aefeeac81fd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "145195512"
+ms.lasthandoff: 07/07/2022
+ms.locfileid: "147019881"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk"></a>使用 Bot Framework SDK 建立 Bot
 
@@ -28,12 +28,14 @@ ms.locfileid: "145195512"
 1. 啟動 **Bot Framework Emulator**，如果系統提示您安裝更新，請針對目前登入的使用者執行此動作。 如果未自動提示，請使用 [說明] 功能表上的 [檢查更新] 選項來檢查更新。
 2. 安裝任何可用的更新之後，請關閉 Bot Framework Emulator，直到您稍後再次需要該 Bot Framework Emulator。
 
+> **重要**：有時更新會下載失敗，正在調查中。 如果在嘗試更新幾分鐘內沒有進展，您可以停止下載並使用模擬器目前安裝的版本。
+
 ### <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
-如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製至您正在處理此實驗室的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
+如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製至您目前使用實驗室的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
 
 1. 啟動 Visual Studio Code。
-2. 開啟調色盤 (SHIFT+CTRL+P) 並執行 **Git：複製**  命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
+2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git:Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (不限資料夾)。
 3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
 4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 
