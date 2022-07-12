@@ -2,18 +2,18 @@
 lab:
   title: 使用影片分析器分析影片
   module: Module 8 - Getting Started with Computer Vision
-ms.openlocfilehash: ec23e53f363ed7c7df8fd598cfd1fc8807712f05
-ms.sourcegitcommit: 7191e53bc33cda92e710d957dde4478ee2496660
+ms.openlocfilehash: 50223cdfeb0a22933858d595d9329f8b8dcd873d
+ms.sourcegitcommit: e20d9099aaecdefa62a763dae24833b97e3d9f6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2022
-ms.locfileid: "147041672"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "147052851"
 ---
 # <a name="analyze-video-with-video-analyzer"></a>使用影片分析器分析影片
 
 現今大部分建立和取用的資料都是視訊格式。 **適用於媒體的影片分析器** 是 AI 支援的服務，可用來編製影片的索引並從中擷取深入解析。
 
-> **注意**：從 2022 年 6 月 21 日開始，傳回個人識別資訊的認知服務功能僅限已獲授與[有限存取權](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access)的客戶使用。 此外，無法再使用推斷情緒狀態的功能。 這些限制可能會影響此實驗室練習。 我們正在解決此問題，但同時，您在遵循下列步驟時可能會遇到一些錯誤；對此我們表示抱歉。 如需 Microsoft 所做之變更和原因的詳細資訊，請參閱[臉部辨識的負責任 AI 投資和保護](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (英文)。
+> **注意**：從 2022 年 6 月 21 日開始，傳回個人識別資訊的認知服務功能僅限已獲授與[有限存取權](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access)的客戶使用。 若未獲得有限存取權核准，則無法針對此實驗室使用影片分析器辨識人物和名人。 如需 Microsoft 所做之變更和原因的詳細資訊，請參閱[臉部辨識的負責任 AI 投資和保護](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (英文)。
 
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
@@ -80,34 +80,6 @@ ms.locfileid: "147041672"
 
 ![蜜蜂的影片分析器搜尋結果](./images/video-indexer-search.png)
 
-## <a name="edit-insights"></a>編輯深入解析
-
-您可以使用影片分析器來編輯找到的深入解析，並新增自訂資訊，讓影片更加具有意義。
-
-1. 將影片倒轉至開始，並檢視 [深入解析] 窗格頂端所列的 **人物**。 觀察已辨識出某些人，包括 **Eric Horwitz**(電腦科學家暨 Microsoft 技術院士)。
-
-![已知人物的影片分析器深入解析](./images/video-indexer-known-person.png)
-
-2. 選取 Eric Horwitz 的相片，然後檢視下方的資訊 - 展開 [顯示傳記] 區段，以查看此人的相關資訊。
-3. 觀察已指出影片中此人出現的位置。 您可以使用這些來檢視影片的這些區段。
-4. 在影片播放程式中，尋找大約在 0:34 說話的人物：
-
-![未知人物的影片分析器深入解析](./images/video-indexer-unknown-person.png)
-
-5. 觀察此人無法辨識，並已獲得一般名稱，例如「未知 #1」。 不過，影片的確包含具有此人名稱的標題，因此我們可藉由編輯此人的詳細資料來充實深入解析。
-6. 在入口網站的右上方，選取 [編輯] 圖示 (&#x1F589;)。 然後將未知人員的名稱變更為 **Natasha Crampton**。
-
-![在影片分析器中編輯人員](./images/video-indexer-edit-name.png)
-
-7. 在您進行名稱變更之後，請在 [深入解析] 窗格中搜尋 *Natasha*。 結果應該包含一個人，並指出其出現在影片中的區段。
-8. 在入口網站的左上方，展開功能表 (&#8801;) 並選取 [模型自訂] 頁面。 然後在 [人物] 索引標籤上，觀察 [預設] 人物模型中有一個人。 影片分析器已將您命名的人物新增至人物模型，以便在您帳戶中編製索引的任何未來影片中加以辨識。
-
-![影片分析器中的預設人物模型](./images/video-indexer-custom-model.png)
-
-您可以將人物影像新增至預設人物模型，或新增自己的新模型。 這可讓您定義包含臉部影像的人物集合，以便影片分析器能在您的影片中加以辨識。
-
-另外觀察，您也可針對語言建立自訂模型 (例如指定您希望影片分析器辨識的產業特有術語) 和品牌 (例如公司或產品名稱)。
-
 ## <a name="use-video-analyzer-widgets"></a>使用影片分析器小工具
 
 影片分析器入口網站是管理影片檢索專案的實用介面。 不過，您可能想要讓影片及其深入解析可供無法存取您的影片分析器帳戶的人員使用。 影片分析器會提供一些小工具，讓您為此目的內嵌於網頁中。
@@ -155,5 +127,7 @@ ms.locfileid: "147041672"
 6. 檢視來自 REST 服務的 JSON 回應，其中應該包含您先前編製索引之 **負責任 AI** 影片的詳細資料。
 
 ## <a name="more-information"></a>詳細資訊
+
+人物和名人辨識仍可供使用，但需遵循[負責任 AI 標準](https://aka.ms/aah91ff)，並受有限存取權原則所限制。 這些功能包括臉部識別和名人辨識。 如需深入了解及申請存取權，請參閱[認知服務的有限存取權](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-limited-access) (英文)。
 
 如需 **影片分析器** 的詳細資訊，請參閱 [影片分析器文件](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-for-media-docs/)。
