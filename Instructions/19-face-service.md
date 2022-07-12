@@ -2,34 +2,36 @@
 lab:
   title: 偵測、分析和辨識臉部
   module: Module 10 - Detecting, Analyzing, and Recognizing Faces
-ms.openlocfilehash: b9565f41eb67b916278508c729860a3471a9e0bd
-ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.openlocfilehash: 29b0544e4f31f6e85eeba5cd8fb42951ca1334a9
+ms.sourcegitcommit: 7191e53bc33cda92e710d957dde4478ee2496660
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "145195499"
+ms.lasthandoff: 07/09/2022
+ms.locfileid: "147041654"
 ---
 # <a name="detect-analyze-and-recognize-faces"></a>偵測、分析和辨識臉部
 
 偵測、分析及辨識人臉的能力是核心 AI 功能。 在此練習中，您將探索兩個 Azure 認知服務，其可用來處理影像中的臉部：**電腦視覺** 服務和 **臉部** 服務。
+
+> **注意**：從 2022 年 6 月 21 日開始，傳回個人識別資訊的認知服務功能僅限已獲授與[有限存取權](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access)的客戶使用。 此外，無法再使用推斷情緒狀態的功能。 這些限制可能會影響此實驗室練習。 我們正在解決此問題，但同時，您在遵循下列步驟時可能會遇到一些錯誤；對此我們表示抱歉。 如需 Microsoft 所做之變更和原因的詳細資訊，請參閱[臉部辨識的負責任 AI 投資和保護](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (英文)。
 
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
 如果您尚未完成此步驟，您必須複製本課程的程式碼存放庫：
 
 1. 啟動 Visual Studio Code。
-2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git：Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
+2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git:Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (不限資料夾)。
 3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
 4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 
-    > **注意**：如果系統提示您新增必要的資產來建置和偵錯，請選取 [現在不要]。
+    > **注意**：如果系統提示您新增必要的資產來組建和偵錯，請選取 [現在不要]。
 
 ## <a name="provision-a-cognitive-services-resource"></a>佈建認知服務資源
 
 如果您的訂用帳戶中還沒有 **認知服務** 資源，則必須加以佈建。
 
 1. 開啟 Azure 入口網站 (位於 `https://portal.azure.com`)，使用與您的 Azure 訂用帳戶相關聯的 Microsoft 帳戶進行登入。
-2. 按一下 [&#65291;建立資源] 按鈕，搜尋 *認知服務*，然後使用以下設定建立 **認知服務** 資源：
+2. 按一下 [&#65291;建立資源] 按鈕，搜尋 *認知服務*，並使用下列設定建立 **認知服務** 資源：
     - **訂用帳戶**：Azure 訂閱
     - **資源群組**：*選擇或建立資源群組 (如果您使用受限制的訂用帳戶，則可能沒有建立新資源群組的權限 - 請使用所提供的資源群組)*
     - **區域**：選擇任一可用區域
@@ -64,7 +66,7 @@ ms.locfileid: "145195499"
     - **C#** ：appsettings.json
     - **Python**：.env
 
-4. 開啟組態檔並更新其中包含的組態值，以反映認知服務資源的 **端點** 和驗證 **金鑰**。 儲存您的變更。
+4. 開啟組態檔並更新其所包含的組態值，以反映認知服務資源的 **端點** 和驗證 **金鑰**。 儲存您的變更。
 
 5. 請注意，**computer-vision** 資料夾包含用戶端應用程式的程式碼檔案：
 
@@ -171,7 +173,7 @@ using (var imageData = File.OpenRead(imageFile))
             var r = face.FaceRectangle;
             Rectangle rect = new Rectangle(r.Left, r.Top, r.Width, r.Height);
             graphics.DrawRectangle(pen, rect);
-            string annotation = $"Person aged approximately {face.Age}";
+            string annotation = $"Person at approximately {face.Left}, {face.Top}";
             graphics.DrawString(annotation,font,brush,r.Left, r.Top);
         }
 
@@ -207,7 +209,7 @@ with open(image_file, mode="rb") as image_data:
             bounding_box = ((r.left, r.top), (r.left + r.width, r.top + r.height))
             draw = ImageDraw.Draw(image)
             draw.rectangle(bounding_box, outline=color, width=5)
-            annotation = 'Person aged approximately {}'.format(face.age)
+            annotation = 'Person at approximately {}, {}'.format(r.left, r.top)
             plt.annotate(annotation,(r.left, r.top), backgroundcolor=color)
 
         # Save annotated image
@@ -233,7 +235,7 @@ with open(image_file, mode="rb") as image_data:
     ```
 
 6. 觀察輸出，其應該指出偵測到的臉部數目。
-7. 檢視在與程式碼檔案相同的資料夾中產生的 **detected_faces.jpg** 檔案，以查看標註的臉部。 在此情況下，您的程式碼已使用臉部的特性來估計影像中每個人物的年齡，而週框方塊座標會在每個臉部周圍繪製矩形。
+7. 檢視在與程式碼檔案相同的資料夾中產生的 **detected_faces.jpg** 檔案，以查看標註的臉部。 在此情況下，您的程式碼已使用臉部的特性來標示方塊左上角的位置，而周框方塊座標會在每個臉部周圍繪製矩形。
 
 ## <a name="prepare-to-use-the-face-sdk"></a>準備使用臉部 SDK
 
@@ -258,7 +260,7 @@ with open(image_file, mode="rb") as image_data:
     - **C#** ：appsettings.json
     - **Python**：.env
 
-4. 開啟組態檔並更新其中包含的組態值，以反映認知服務資源的 **端點** 和驗證 **金鑰**。 儲存您的變更。
+4. 開啟組態檔並更新其所包含的組態值，以反映認知服務資源的 **端點** 和驗證 **金鑰**。 儲存您的變更。
 
 5. 請注意，**face-api** 資料夾包含用戶端應用程式的程式碼檔案：
 
@@ -309,7 +311,7 @@ with open(image_file, mode="rb") as image_data:
 
 ## <a name="detect-and-analyze-faces"></a>偵測並分析臉部
 
-臉部服務的最基本功能之一就是偵測影像中的臉部，並判斷其特性，例如年齡、情緒表達、髮色、配戴眼鏡等等。
+臉部服務的最基本功能之一就是偵測影像中的臉部，並判斷其特性，例如頭部姿勢、模糊、是否戴眼鏡等等。
 
 1. 在應用程式的程式碼檔案中，在 **Main** 函式中，檢查使用者選取功能表選項 **1** 時所執行的程式碼。 此程式碼會呼叫 **DetectFaces** 函式，並將路徑傳遞至影像檔。
 2. 在程式碼檔案中尋找 **DetectFaces** 函式，並在 **Specify facial features to be retrieved** 註解之下，新增下列程式碼：
@@ -320,8 +322,8 @@ with open(image_file, mode="rb") as image_data:
     // Specify facial features to be retrieved
     List<FaceAttributeType?> features = new List<FaceAttributeType?>
     {
-        FaceAttributeType.Age,
-        FaceAttributeType.Emotion,
+        FaceAttributeType.Occlusion,
+        FaceAttributeType.Blur,
         FaceAttributeType.Glasses
     };
     ```
@@ -330,8 +332,8 @@ with open(image_file, mode="rb") as image_data:
 
     ```Python
     # Specify facial features to be retrieved
-    features = [FaceAttributeType.age,
-                FaceAttributeType.emotion,
+    features = [FaceAttributeType.occlusion,
+                FaceAttributeType.blur,
                 FaceAttributeType.glasses]
     ```
 
@@ -361,15 +363,11 @@ using (var imageData = File.OpenRead(imageFile))
         {
             // Get face properties
             Console.WriteLine($"\nFace ID: {face.FaceId}");
-            Console.WriteLine($" - Age: {face.FaceAttributes.Age}");
-            Console.WriteLine($" - Emotions:");
-            foreach (var emotion in face.FaceAttributes.Emotion.ToRankedList())
-            {
-                Console.WriteLine($"   - {emotion}");
-            }
-
+            Console.WriteLine($" - Mouth Occluded: {face.FaceAttributes.Occlusion.MouthOccluded}");
+            Console.WriteLine($" - Eye Occluded: {face.FaceAttributes.Occlusion.EyeOccluded}");
+            Console.WriteLine($" - Blur: {face.FaceAttributes.Blur.BlurLevel}");
             Console.WriteLine($" - Glasses: {face.FaceAttributes.Glasses}");
-
+            
             // Draw and annotate face
             var r = face.FaceRectangle;
             Rectangle rect = new Rectangle(r.Left, r.Top, r.Width, r.Height);
@@ -410,14 +408,16 @@ with open(image_file, mode="rb") as image_data:
             # Get face properties
             print('\nFace ID: {}'.format(face.face_id))
             detected_attributes = face.face_attributes.as_dict()
-            age = 'age unknown' if 'age' not in detected_attributes.keys() else int(detected_attributes['age'])
-            print(' - Age: {}'.format(age))
+            if 'blur' in detected_attributes:
+                print(' - Blur:')
+                for blur_name in detected_attributes['blur']:
+                    print('   - {}: {}'.format(blur_name, detected_attributes['blur'][blur_name]))
+                    
+            if 'occlusion' in detected_attributes:
+                print(' - Occlusion:')
+                for occlusion_name in detected_attributes['occlusion']:
+                    print('   - {}: {}'.format(occlusion_name, detected_attributes['occlusion'][occlusion_name]))
 
-            if 'emotion' in detected_attributes:
-                print(' - Emotions:')
-                for emotion_name in detected_attributes['emotion']:
-                    print('   - {}: {}'.format(emotion_name, detected_attributes['emotion'][emotion_name]))
-            
             if 'glasses' in detected_attributes:
                 print(' - Glasses:{}'.format(detected_attributes['glasses']))
 
@@ -446,7 +446,7 @@ with open(image_file, mode="rb") as image_data:
     dotnet run
     ```
 
-    *C# 輸出可顯示有關現在使用 **await** 運算子之非同步函式的警告。您可以忽略這些。*
+    *C# 輸出可能會顯示警告，有關現在使用 **await** 運算子之非同步函式。您可以忽略這些警告。*
 
     **Python**
 
@@ -593,7 +593,7 @@ with open(image_2, mode="rb") as image_data:
     dotnet run
     ```
 
-    *C# 輸出可顯示有關現在使用 **await** 運算子之非同步函式的警告。您可以忽略這些。*
+    *C# 輸出可能會顯示警告，有關現在使用 **await** 運算子之非同步函式。您可以忽略這些警告。*
 
     **Python**
 
@@ -713,7 +713,7 @@ for person in people:
     dotnet run
     ```
 
-    *C# 輸出可顯示有關現在使用 **await** 運算子之非同步函式的警告。您可以忽略這些。*
+    *C# 輸出可能會顯示警告，有關現在使用 **await** 運算子之非同步函式。您可以忽略這些警告。*
 
     **Python**
 
@@ -854,7 +854,7 @@ with open(image_file, mode="rb") as image_data:
     dotnet run
     ```
 
-    *C# 輸出可顯示有關現在使用 **await** 運算子之非同步函式的警告。您可以忽略這些。*
+    *C# 輸出可能會顯示警告，有關現在使用 **await** 運算子之非同步函式。您可以忽略這些警告。*
 
     **Python**
 
@@ -944,6 +944,6 @@ for person in people:
 
 ## <a name="more-information"></a>詳細資訊
 
-如需有關使用 **電腦視覺** 服務進行臉部偵測的詳細資訊，請參閱[電腦視覺文件](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-detecting-faces)。
+如需有關使用 **電腦視覺** 服務進行臉部偵測的詳細資訊，請參閱 [電腦視覺文件](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-detecting-faces)。
 
-若要深入了解 **臉部** 服務，請參閱[臉部文件](https://docs.microsoft.com/azure/cognitive-services/face/)。
+若要深入了解 **臉部** 服務，請參閱 [臉部文件](https://docs.microsoft.com/azure/cognitive-services/face/)。

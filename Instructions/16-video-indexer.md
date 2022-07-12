@@ -2,23 +2,25 @@
 lab:
   title: 使用影片分析器分析影片
   module: Module 8 - Getting Started with Computer Vision
-ms.openlocfilehash: cd67c472b5ee15efce232483afc8aeeac552b50c
-ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.openlocfilehash: ec23e53f363ed7c7df8fd598cfd1fc8807712f05
+ms.sourcegitcommit: 7191e53bc33cda92e710d957dde4478ee2496660
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "145195508"
+ms.lasthandoff: 07/09/2022
+ms.locfileid: "147041672"
 ---
 # <a name="analyze-video-with-video-analyzer"></a>使用影片分析器分析影片
 
 現今大部分建立和取用的資料都是視訊格式。 **適用於媒體的影片分析器** 是 AI 支援的服務，可用來編製影片的索引並從中擷取深入解析。
 
+> **注意**：從 2022 年 6 月 21 日開始，傳回個人識別資訊的認知服務功能僅限已獲授與[有限存取權](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access)的客戶使用。 此外，無法再使用推斷情緒狀態的功能。 這些限制可能會影響此實驗室練習。 我們正在解決此問題，但同時，您在遵循下列步驟時可能會遇到一些錯誤；對此我們表示抱歉。 如需 Microsoft 所做之變更和原因的詳細資訊，請參閱[臉部辨識的負責任 AI 投資和保護](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (英文)。
+
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
-如果您已經將 **AI-102-AIEngineer** 程式碼存放庫複製到您正在此實驗室使用的環境，請在 Visual Studio Code 中予以開啟；否則，依照下列步驟立即進行複製。
+如果您已經將 **AI-102-AIEngineer** 程式碼存放庫複製到您正在進行此實驗室的環境，請在 Visual Studio Code 中予以開啟；否則，依照下列步驟立即進行複製。
 
 1. 啟動 Visual Studio Code。
-2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git：Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
+2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git:Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (不限資料夾)。
 3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
 4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 

@@ -2,12 +2,12 @@
 lab:
   title: 使用電腦視覺分析影像
   module: Module 8 - Getting Started with Computer Vision
-ms.openlocfilehash: 5b7f15550844e4bc5efbdb3b8ee00d71760f18c9
-ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.openlocfilehash: f2ee18ff682d53e9fd554749ed2b9cbaa9b03611
+ms.sourcegitcommit: 7191e53bc33cda92e710d957dde4478ee2496660
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "145195459"
+ms.lasthandoff: 07/09/2022
+ms.locfileid: "147041663"
 ---
 # <a name="analyze-images-with-computer-vision"></a>使用電腦視覺分析影像
 
@@ -22,13 +22,13 @@ ms.locfileid: "145195459"
 3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
 4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 
-    > **注意**：如果系統提示您新增必要的資產來建置和偵錯，請選取 [現在不要]。
+    > **注意**：如果系統提示您新增必要的資產來組建和偵錯，請選取 [現在不要]。
 
 ## <a name="provision-a-cognitive-services-resource"></a>佈建認知服務資源
 
 如果您的訂用帳戶中還沒有 **認知服務** 資源，則必須加以佈建。
 
-1. 開啟位於 `https://portal.azure.com` 的 Azure 入口網站，使用與您的 Azure 訂用帳戶相關聯的 Microsoft 帳戶進行登入。
+1. 開啟 Azure 入口網站 (位於 `https://portal.azure.com`)，使用與您的 Azure 訂用帳戶相關聯的 Microsoft 帳戶進行登入。
 2. 按一下 [&#65291;建立資源] 按鈕，搜尋 *認知服務*，並使用下列設定建立 **認知服務** 資源：
     - **訂用帳戶**：Azure 訂閱
     - **資源群組**：*選擇或建立資源群組 (如果您使用受限制的訂用帳戶，則可能沒有建立新資源群組的權限 - 請使用所提供的資源群組)*
@@ -265,16 +265,15 @@ if (len(analysis.tags) > 0):
 
 ## <a name="get-image-categories"></a>取得影像類別
 
-電腦視覺服務可以建議影像的 *類別*，而且可以在每個類別中識別著名地標或名人。
+電腦視覺服務可以建議影像的 *類別*，而且可以在每個類別中識別著名地標。
 
-1. 在 **AnalyzeImage** 函式的註解 **Get image categories (including celebrities and landmarks)** 底下，新增下列程式碼：
+1. 在 **AnalyzeImage** 函式的 **Get image tags** \(取得影像標籤\) 註解下，新增下列程式碼：
 
 **C#**
 
 ```C
-// Get image categories (including celebrities and landmarks)
+// Get image categories
 List<LandmarksModel> landmarks = new List<LandmarksModel> {};
-List<CelebritiesModel> celebrities = new List<CelebritiesModel> {};
 Console.WriteLine("Categories:");
 foreach (var category in analysis.Categories)
 {
@@ -292,18 +291,6 @@ foreach (var category in analysis.Categories)
             }
         }
     }
-
-    // Get celebrities in this category
-    if (category.Detail?.Celebrities != null)
-    {
-        foreach (CelebritiesModel celebrity in category.Detail.Celebrities)
-        {
-            if (!celebrities.Any(item => item.Name == celebrity.Name))
-            {
-                celebrities.Add(celebrity);
-            }
-        }
-    }
 }
 
 // If there were landmarks, list them
@@ -316,25 +303,15 @@ if (landmarks.Count > 0)
     }
 }
 
-// If there were celebrities, list them
-if (celebrities.Count > 0)
-{
-    Console.WriteLine("Celebrities:");
-    foreach(CelebritiesModel celebrity in celebrities)
-    {
-        Console.WriteLine($" -{celebrity.Name} (confidence: {celebrity.Confidence.ToString("P")})");
-    }
-}
 ```
 
 **Python**
 
 ```Python
-# Get image categories (including celebrities and landmarks)
+# Get image categories
 if (len(analysis.categories) > 0):
     print("Categories:")
     landmarks = []
-    celebrities = []
     for category in analysis.categories:
         # Print the category
         print(" -'{}' (confidence: {:.2f}%)".format(category.name, category.score * 100))
@@ -345,27 +322,15 @@ if (len(analysis.categories) > 0):
                     if landmark not in landmarks:
                         landmarks.append(landmark)
 
-            # Get celebrities in this category
-            if category.detail.celebrities:
-                for celebrity in category.detail.celebrities:
-                    if celebrity not in celebrities:
-                        celebrities.append(celebrity)
-
     # If there were landmarks, list them
     if len(landmarks) > 0:
         print("Landmarks:")
         for landmark in landmarks:
             print(" -'{}' (confidence: {:.2f}%)".format(landmark.name, landmark.confidence * 100))
 
-    # If there were celebrities, list them
-    if len(celebrities) > 0:
-        print("Celebrities:")
-        for celebrity in celebrities:
-            print(" -'{}' (confidence: {:.2f}%)".format(celebrity.name, celebrity.confidence * 100))
-
 ```
     
-2. 儲存您的變更並針對 **images** 資料夾中的每個影像檔案執行一次程式，觀察除了影像標題和標籤之外，是否也有顯示建議的類別清單，以及任何可辨識的地標或名人清單 (特別是 **building.jpg** 和 **person.jpg** 影像)。
+2. 儲存您的變更並針對 **images** 資料夾中的每個影像檔案執行一次程式，觀察除了影像標題和標籤之外，是否也有顯示建議的類別清單，以及任何可辨識的地標清單 (特別是在 **building.jpg** 影像中)。
 
 ## <a name="get-brands-in-an-image"></a>取得影像中的品牌
 
@@ -547,4 +512,4 @@ print('Thumbnail saved in.', thumbnail_file_name)
 
 在此練習中，您已探索電腦視覺服務的一些影像分析和操作功能。 此服務也包含讀取文字、偵測臉部和其他電腦視覺工作的功能。
 
-有關使用 **電腦視覺** 服務的更多資訊，請參閱[電腦視覺文件](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)。
+有關使用 **電腦視覺** 服務的更多資訊，請參閱 [電腦視覺文件](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)。
