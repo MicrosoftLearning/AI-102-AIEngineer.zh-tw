@@ -1,19 +1,19 @@
 ---
 lab:
-  title: 偵測、分析和辨識臉部
+  title: 偵測並分析臉部
   module: Module 10 - Detecting, Analyzing, and Recognizing Faces
-ms.openlocfilehash: e653e929d86e7c3ab980085ceb551861f134be36
-ms.sourcegitcommit: e20d9099aaecdefa62a763dae24833b97e3d9f6d
+ms.openlocfilehash: ac73112414f9e0e4f944029dbfb1f5df0f204f28
+ms.sourcegitcommit: f19509304dff38600d6431f4873e0d580fb51425
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "147052842"
+ms.lasthandoff: 07/14/2022
+ms.locfileid: "147124830"
 ---
-# <a name="detect-analyze-and-recognize-faces"></a>偵測、分析和辨識臉部
+# <a name="detect-and-analyze-faces"></a>偵測並分析臉部
 
-偵測、分析及辨識人臉的能力是核心 AI 功能。 在此練習中，您將探索兩個 Azure 認知服務，其可用來處理影像中的臉部：**電腦視覺** 服務和 **臉部** 服務。
+偵測並分析人臉的能力，是核心 AI 功能。 在此練習中，您將探索兩個 Azure 認知服務，其可用來處理影像中的臉部：**電腦視覺** 服務和 **臉部** 服務。
 
-> **注意**：從 2022 年 6 月 21 日開始，傳回個人識別資訊的認知服務功能僅限已獲授與[有限存取權](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access)的客戶使用。 此外，無法再使用推斷情緒狀態的功能。 這些限制可能會影響此實驗室練習。 我們正在解決此問題，但同時，您在遵循下列步驟時可能會遇到一些錯誤；對此我們表示抱歉。 如需 Microsoft 所做之變更和原因的詳細資訊，請參閱[臉部辨識的負責任 AI 投資和保護](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (英文)。
+> **注意**：從 2022 年 6 月 21 日開始，傳回個人識別資訊的認知服務功能僅限已獲授與 [有限存取權](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access)的客戶使用。 此外，無法再使用推斷情緒狀態的功能。 這些限制可能會影響此實驗室練習。 我們正在解決此問題，但同時，您在遵循下列步驟時可能會遇到一些錯誤；對此我們表示抱歉。 如需 Microsoft 所做之變更和原因的詳細資訊，請參閱[臉部辨識的負責任 AI 投資和保護](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (英文)。
 
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
@@ -173,7 +173,7 @@ using (var imageData = File.OpenRead(imageFile))
             var r = face.FaceRectangle;
             Rectangle rect = new Rectangle(r.Left, r.Top, r.Width, r.Height);
             graphics.DrawRectangle(pen, rect);
-            string annotation = $"Person at approximately {face.Left}, {face.Top}";
+            string annotation = $"Person at approximately {r.Left}, {r.Top}";
             graphics.DrawString(annotation,font,brush,r.Left, r.Top);
         }
 
@@ -459,7 +459,7 @@ with open(image_file, mode="rb") as image_data:
 
 ## <a name="more-information"></a>詳細資訊
 
-**臉部** 服務中還有幾個額外功能可供使用，但需遵循[負責任 AI 標準](https://aka.ms/aah91ff)，並受有限存取權原則所限制。 這些功能包括識別、驗證及建立臉部辨識模型。 如需深入了解及申請存取權，請參閱[認知服務的有限存取權](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-limited-access) (英文)。
+**臉部** 服務中還有幾個額外功能可供使用，但需遵循 [負責任 AI 標準](https://aka.ms/aah91ff)，並受有限存取權原則所限制。 這些功能包括識別、驗證及建立臉部辨識模型。 如需深入了解及申請存取權，請參閱[認知服務的有限存取權](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-limited-access) (英文)。
 
 如需有關使用 **電腦視覺** 服務進行臉部偵測的詳細資訊，請參閱 [電腦視覺文件](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-detecting-faces)。
 
