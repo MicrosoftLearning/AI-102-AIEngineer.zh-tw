@@ -17,10 +17,10 @@ ms.locfileid: "145951179"
 
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
-如果您已經將 **AI-102-AIEngineer** 程式碼存放庫複製到您正在此實驗中使用的環境，請在 Visual Studio Code 中予以開啟；否則，依照下列步驟立即進行複製。
+如果您已經將 **AI-102-AIEngineer** 程式碼存放庫複製到您正在此實驗室中使用的環境，請在 Visual Studio Code 中予以開啟；否則，依照下列步驟立即進行複製。
 
 1. 啟動 Visual Studio Code。
-2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git：Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (不限資料夾)。
+2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git: Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (不限資料夾)。
 3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
 4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 
@@ -56,7 +56,7 @@ ms.locfileid: "145951179"
 
     將會開啟網頁瀏覽器索引標籤，並提示您登入 Azure。 如此操作後，接著關閉瀏覽器索引標籤並返回 Visual Studio Code。
 
-    > **秘訣**：如果您有多個訂用帳戶，您必須確定您在包含認知服務資源的訂用帳戶中工作。  使用此命令來判斷您目前的訂用帳戶 - 其唯一識別碼是 JSON 中傳回的 **id** 值。
+    > **秘訣**：如果您有多個訂用帳戶，您必須確定您在包含認知服務資源的訂用帳戶中工作。  使用此命令來判斷您目前的訂用帳戶 - 其唯一識別碼是 JSON 中傳回的 **識別碼** 值。
 
     > **警告**：如果您收到 `az login` 的憑證驗證失敗，請嘗試等候幾分鐘後再試一次。
     >

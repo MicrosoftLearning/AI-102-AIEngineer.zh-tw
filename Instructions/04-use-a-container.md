@@ -20,11 +20,11 @@ ms.locfileid: "145195473"
 如果您已經將 **AI-102-AIEngineer** 程式碼存放庫複製到您正在此實驗室使用的環境，請在 Visual Studio Code 中予以開啟；否則，請遵循下列步驟立即進行複製。
 
 1. 啟動 Visual Studio Code。
-2. 開啟調色盤 (SHIFT+CTRL+P) 並執行 **Git：複製**  命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
+2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git: Clone**  命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
 3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
 4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 
-    > **注意**：如果系統提示您新增必要的資產來組建和偵錯，請選取 [現在不要]。
+    > **注意**：如果系統提示您新增必要的資產來建置和偵錯，請選取 [現在不要]。
 
 ## <a name="provision-a-cognitive-services-resource"></a>佈建認知服務資源
 
@@ -67,8 +67,8 @@ ms.locfileid: "145195473"
 
             | 標示為安全 | Key | 值 |
             | -------------- | --- | ----- |
-            | Yes | `ApiKey` | *認知服務資源的任一金鑰* |
-            | Yes | `Billing` | *認知服務資源的端點 URI* |
+            | 是 | `ApiKey` | *認知服務資源的任一金鑰* |
+            | 是 | `Billing` | *認知服務資源的端點 URI* |
             | 否 | `Eula` | `accept` |
 
         - **命令覆寫**：[]

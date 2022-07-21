@@ -15,7 +15,7 @@ ms.locfileid: "145951187"
 
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
-如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製到您正此實驗室使用的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
+如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製至您目前使用實驗室的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
 
 1. 啟動 Visual Studio Code。
 2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git:Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
@@ -26,7 +26,7 @@ ms.locfileid: "145951187"
 
 ## <a name="provision-a-cognitive-services-resource"></a>佈建認知服務資源
 
-Azure 認知服務是雲端式服務，可封裝您可併入應用程式的人工智慧功能。 您可以佈建特定 API 的個別認知服務資源 (例如 **語言** 或 **電腦視覺**)，也可以佈建一般 **認知服務** 資源，透過單一端點和金鑰來存取多個認知服務 API。 在此情況下，您將使用單一 **認知服務** 資源。
+Azure 認知服務是雲端式服務，可封裝您可併入應用程式的人工智慧功能。 您可以佈建特定 API 的個別認知服務資源 (例如語言或電腦視覺)，也可以佈建一般 **認知服務** 資源，透過單一端點和金鑰來存取多個認知服務 API。 在此情況下，您將使用單一 **認知服務** 資源。
 
 1. 開啟 Azure 入口網站 (位於 `https://portal.azure.com`)，使用與您的 Azure 訂用帳戶相關聯的 Microsoft 帳戶進行登入。
 2. 按一下 [&#65291;建立資源] 按鈕，搜尋「認知服務」，然後使用以下設定建立 **認知服務** 資源：

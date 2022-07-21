@@ -299,19 +299,19 @@ python clock-client.py
 
 5. 出現提示時，請輸入表達來測試應用程式。 例如，嘗試：
 
-    *您好*
+    *Hello*
     
-    *What time is it? (現在幾點？)*
+    *What time is it?*
 
-    *What's the time in London? (倫敦現在幾點？)*
+    *What's the time in London?*
 
-    *What's the date? (今天是幾月幾號？)*
+    *What's the date?*
 
-    *What date is Sunday? (星期天是幾月幾號？)*
+    *What date is Sunday?*
 
-    *What day is it? (今天是什麼日子？)*
+    *What day is it?*
 
-    *What day is 01/01/2025? (今天是 2025 年 1 月 1 日嗎？)*
+    *What day is 01/01/2025?*
 
 > **注意**：應用程式中的邏輯刻意簡單，而且有一些限制。 例如，取得時間時，只支援一組受限制的城市並忽略日光節約時間。 目標在於查看使用 Language Understanding 的典型模式範例，以便，而您的應用程式在其中必須：
 >

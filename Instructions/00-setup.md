@@ -56,10 +56,10 @@ pip install --upgrade numpy
 
 ### <a name="git"></a>Git
 
-1. 使用預設選項從 https://git-scm.com/download.html 下載，並安裝
+1. 使用預設選項從 https://git-scm.com/download.html 下載，並使用預設選項從安裝
 
 
-### <a name="visual-studio-code-and-extensions"></a>Visual Studio Code (和延伸模組)
+### <a name="visual-studio-code-and-extensions"></a>Visual Studio Code (和擴充套件)
 
 1. 下載自 https://code.visualstudio.com/Download 
 2. 使用預設選項進行安裝 
@@ -72,7 +72,7 @@ pip install --upgrade numpy
 
 ### <a name="bot-framework-emulator"></a>Bot Framework 模擬器
 
-請遵循位於 https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md 的指示，來下載並安裝作業系統的最新穩定版本 Bot Framework Emulator。
+請遵循位於 https://github.com/Microsoft/BotFramework-Emulator/blob/master/README.md 的指示，來下載並安裝作業系統的最新穩定版本 Bot Framework 模擬器。
 
 ### <a name="bot-framework-composer"></a>Bot Framework 編輯器
 

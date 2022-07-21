@@ -47,7 +47,7 @@ ms.locfileid: "147019881"
 
 > **注意**：在此練習中，您可以選擇使用 **C#** 或 **Python**。 在下列步驟中，執行適合您慣用語言的動作。
 
-1. 在 Visual Studio Code 的 [Explorer] 窗格中，瀏覽至 [13-bot-framework] 資料夾，然後根據您的語言偏好設定展開 [C-Sharp] 或 [Python] 資料夾。
+1. 在 Visual Studio Code 的 [瀏覽器] 窗格中，瀏覽至 [13-bot-framework] 資料夾，然後根據您的語言偏好設定展開 [C-Sharp] 或 [Python] 資料夾。
 2. 以滑鼠右鍵按一下所選語言的資料夾，並開啟整合式終端。
 3. 在終端中，執行下列命令來安裝您需要的 Bot 範本和套件：
 

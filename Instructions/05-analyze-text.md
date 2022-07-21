@@ -17,7 +17,7 @@ ms.locfileid: "145195538"
 
 ## <a name="clone-the-repository-for-this-course"></a>複製本課程的存放庫
 
-如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製到您正此實驗室使用的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
+如果您尚未將 **AI-102-AIEngineer** 程式碼存放庫複製到您目前使用實驗室的環境，請遵循下列步驟來執行這項操作。 否則，請在 Visual Studio Code 中開啟複製的資料夾。
 
 1. 啟動 Visual Studio Code。
 2. 開啟選擇區 (SHIFT+CTRL+P) 並執行 **Git：Clone** 命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
@@ -91,7 +91,7 @@ ms.locfileid: "145195538"
     from azure.ai.textanalytics import TextAnalyticsClient
     ```
 
-5. 在 **Main** 函式中，請注意已經提供可從組態檔載入認知服務端點和金鑰的程式碼。 然後尋找 **使用端點和金鑰建立用戶端** 註解，接著新增下列程式碼以建立文字分析 API 的用戶端：
+5. 在 **Main** 函式中，請注意已經提供可從組態檔載入認知服務端點和金鑰的程式碼。 然後尋找 **Create client using endpoint and key** 註解，接著新增下列程式碼以建立文字分析 API 的用戶端：
 
     **C#**
 
@@ -130,7 +130,7 @@ ms.locfileid: "145195538"
 
 既然您已為文字分析 API 建立用戶端，讓我們使用來偵測用以撰寫每篇評論的語言。
 
-1. 在程式的 **Main** 函式中，尋找 **取得語言** 註解。 然後，在此註解之下，新增用以在每個評論文件中偵測語言所需的程式碼：
+1. 在程式的 **Main** 函式中，尋找 **Get language** 註解。 然後，在此註解之下，新增用以在每個評論文件中偵測語言所需的程式碼：
 
     **C#**
     

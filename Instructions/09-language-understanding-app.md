@@ -15,7 +15,7 @@ Language Understanding 服務可讓您定義一個封裝語言模型的應用程
 
 例如，適用於時鐘應用程式的語言理解應用程式可能需要處理輸入，例如：
 
-*What is the time in London? (倫敦現在幾點？)*
+*What is the time in London?*
 
 這種輸入是 *表達* 的範例，(使用者可能會說出或鍵入的東西)，其 *意圖* 是取得特定位置 (*實體*) 的時間；在此案例中為倫敦。
 
@@ -32,7 +32,7 @@ Language Understanding 服務可讓您定義一個封裝語言模型的應用程
 
     > **注意**：如果系統提示您新增必要的資產來組建和偵錯，請選取 [現在不要]。
 
-## <a name="create-language-understanding-resources"></a>建立 Language Understanding 資源
+## <a name="create-language-understanding-resources"></a>建立語言理解資源
 
 若要使用語言理解服務，您需要兩種資源：
 
@@ -69,7 +69,7 @@ Language Understanding 服務可讓您定義一個封裝語言模型的應用程
 
 3. 在 [交談應用程式] 頁面上，請確認已選取您的訂用帳戶和語言理解製作資源。 然後建立一個適用於交談且包含以下設定全新應用程式：
     - **名稱**：時鐘
-    - **文化特性 (Culture)** ：英文 (如果此選項不可用，讓它保持空白)
+    - **文化特性：** 英文 (如果此選項不可用，讓它保持空白)
     - **描述**：自然語言時鐘
     - **預測資源**：您的語言理解預測資源
 
@@ -156,7 +156,7 @@ Language Understanding 服務可讓您定義一個封裝語言模型的應用程
 5. 新增表達之後，請選取 *[London]_ 這個字，然後在出現的下拉式清單中，選取 _[Location]* 以指出「London」是位置的範例。
 6. 新增另一個表達範例：
 
-    *what is the current time in New York? (紐約的目前時間為何？)*
+    *what is the current time in New York?*
 
 7. 新增表達之後，請選取 *[New York]_ 這個字，並將其對應至 _[Location]* 實體。
 
@@ -170,23 +170,23 @@ Language Understanding 服務可讓您定義一個封裝語言模型的應用程
 
     | 標準化值 | 同義字|
     |-------------------|---------|
-    | 星期日 | 週日 |
-    | 星期一 | 週一 |
-    | 星期二 | 週二 |
-    | 星期三 | 週三 |
-    | 星期四 | 週四 |
-    | 星期五 | 週五 |
-    | 星期六 | 週六 |
+    | Sunday | Sun |
+    | Monday | 週一 |
+    | Tuesday | Tue |
+    | Wednesday | Wed |
+    | Thursday | Thu |
+    | Friday | Fri |
+    | 星期六 | Sat |
 
 3. 建立 **平日** 實體之後，返回 [意圖] 頁面，然後選取 [GetTime] 意圖。
 4. 輸入下列新的範例表達：
 
-    *星期六的日期是幾號？*
+    *what date was it on Saturday?*
 
 5. 新增表達之後，請驗證 **星期六** 已自動對應至 [平日]實體。 如果沒有，請選取 [星期六] ***_這個字詞，然後在出現的下拉式清單中選取 _[平日]***。
 6. 新增另一個表達範例：
 
-    *星期五將會是幾號？*
+    *what date will it be on Friday?*
 
 7. 新增表達後，請確定 **星期五** 對應至 [平日]實體。
 

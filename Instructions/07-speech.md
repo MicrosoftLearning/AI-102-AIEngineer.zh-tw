@@ -138,7 +138,7 @@ ms.locfileid: "145195465"
 ### <a name="if-you-have-a-working-microphone"></a>如果您有運作中的麥克風
 
 1. 在程式的 **Main** 函式中，請注意程式碼會使用 **TranscribeCommand** 函式來接受口語輸入。
-2. 在 **TranscribeCommand** 函式的 **設定語音辨識** 註解之下，新增適當的程式碼來建立 **SpeechRecognizer** 用戶端，以便使用預設系統麥克風來辨識和轉譯語音：
+2. 在 **TranscribeCommand** 函式的 **Configure speech recognition** 註解之下，新增適當的程式碼來建立 **SpeechRecognizer** 用戶端，以便使用預設系統麥克風來辨識和轉譯語音：
 
     **C#**
     
@@ -190,7 +190,7 @@ ms.locfileid: "145195465"
     from playsound import playsound
     ```
 
-3. 在 **Main** 函式中，請注意程式碼會使用 **TranscribeCommand** 函式來接受口語輸入。 然後在 **TranscribeCommand** 函式的 **設定語音辨識** 註解之下，新增適當的程式碼來建立 **SpeechRecognizer** 用戶端，以便用於辨識音訊檔案中的語音並加以轉譯：
+3. 在 **Main** 函式中，請注意程式碼會使用 **TranscribeCommand** 函式來接受口語輸入。 然後在 **TranscribeCommand** 函式的 **Configure speech recognition** 註解之下，新增適當的程式碼來建立 **SpeechRecognizer** 用戶端，以便用於辨識音訊檔案中的語音並加以轉譯：
 
     **C#**
 
