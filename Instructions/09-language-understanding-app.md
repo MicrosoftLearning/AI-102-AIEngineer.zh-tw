@@ -171,12 +171,12 @@ Language Understanding 服務可讓您定義一個封裝語言模型的應用程
     | 標準化值 | 同義字|
     |-------------------|---------|
     | Sunday | Sun |
-    | Monday | 週一 |
+    | Monday | Mon |
     | Tuesday | Tue |
     | Wednesday | Wed |
     | Thursday | Thu |
     | Friday | Fri |
-    | 星期六 | Sat |
+    | Saturday | Sat |
 
 3. 建立 **平日** 實體之後，返回 [意圖] 頁面，然後選取 [GetTime] 意圖。
 4. 輸入下列新的範例表達：
