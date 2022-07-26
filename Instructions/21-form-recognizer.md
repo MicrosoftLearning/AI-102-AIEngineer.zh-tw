@@ -2,12 +2,12 @@
 lab:
   title: 從表單擷取資料
   module: Module 11 - Reading Text in Images and Documents
-ms.openlocfilehash: 540fdc49b9efcf335d43cdd7a6db405c255cd058
-ms.sourcegitcommit: de1f38bbe53ec209b42cd89516813773e2f3479b
+ms.openlocfilehash: 96d47db5b1db0b4d87b5c7acd267493487584c41
+ms.sourcegitcommit: 94c8705b76b644d0fb0cd6df1b78ff63d5869109
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2022
-ms.locfileid: "145195462"
+ms.lasthandoff: 07/26/2022
+ms.locfileid: "147406483"
 ---
 # <a name="extract-data-from-forms"></a>從表單擷取資料 
 
@@ -21,8 +21,8 @@ ms.locfileid: "145195462"
 
 1. 啟動 Visual Studio Code。
 2. 開啟調色盤 (SHIFT+CTRL+P) 並執行 **Git：複製**  命令，將 `https://github.com/MicrosoftLearning/AI-102-AIEngineer` 存放庫複製到本機資料夾 (哪個資料夾無關緊要)。
-3. 複製存放庫後，請在 Visual Studio Code 中開啟該資料夾。
-4. 等候其他檔案完成安裝，以支援存放庫中的 C# 程式碼專案。
+3. 複製存放庫後，請在 Visual Studio Code 中開啟此資料夾。
+4. 等候其他檔案安裝以支援存放庫中的 C# 程式碼專案。
 
     > **注意**：如果系統提示您新增必要的資產來組建和偵錯，請選取 [現在不要]。
 
@@ -34,7 +34,7 @@ ms.locfileid: "145195462"
 
 2. 選取 [&#65291;建立資源] 按鈕、搜尋 [表格辨識器] ，並使用下列設定建立 **表格辨識器** 資源：
     - **訂用帳戶**：Azure 訂閱
-    - **資源群組**：*選擇或建立資源群組 (如果您使用受限制的訂用帳戶，則您可能沒有建立新資源群組的權限 - 請使用所提供的資源群組)*
+    - **資源群組**：*選擇或建立資源群組 (如果您使用受限制的訂用帳戶，則可能沒有建立新資源群組的權限 - 請使用所提供的資源群組)*
     - **區域**：選擇任一可用區域
     - **名稱**：*輸入唯一名稱*
     - **定價層**：F0
@@ -201,7 +201,7 @@ pip install azure-ai-formrecognizer==3.0.0
 **C#**
 
 ```
-Install-Package Tabulate.NET -Version 1.0.5
+dotnet add package Tabulate.NET --version 1.0.5
 ```
 
 **Python**
